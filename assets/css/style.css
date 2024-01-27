@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*Header Top*/
+.topbar {
+	background-color: #128b57;
+	padding: 0px 60px;
+	font-family: 'Inter', sans-serif;
+	font-weight: bold;
+	color: #fff;
+	font-size: 12px;
+	letter-spacing: 1px;
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	/* font-family: 'Heebo', sans-serif; */
+	font-family: Inter;
+}
+
+.topbar a {
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px 0px;
+}
+
+.topbar-1 a {
+	text-decoration: underline;
+}
+
+.topbar-2 {
+	display: flex;
+	gap: 40px;
+}
+
+/* End Header Top*/
+
+/*Main Header*/
+nav {
+	padding: 16px;
+}
+
+nav .links {
+	display: flex;
+}
+
+nav .nav-link {
+	list-style-type: none;
+	font-size: 13px;
+	padding: 10px 34px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: 1.08px;
+}
+
+.drop-menu {
+	position: relative;
+}
+
+.drop-menu .drop-content {
+	position: absolute;
+	min-width: 150px;
+	transform-origin: top;
+	box-shadow: 7px 4px 11px -2px #2121216e;
+	text-transform: capitalize;
+	border-radius: 6px;
+	backdrop-filter: blur(2px);
+	font-size: 14px;
+	overflow: hidden;
+	left: 50%;
+	top: 100%;
+	transform: rotateX(90deg) translateX(-50%);
+	transition: all 0.5s ease;
+	cursor: pointer;
+}
+
+.drop-content li {
+	list-style-type: none;
+	padding: 10px;
+}
+
+.drop-content li a {
+	color: white;
+}
+
+.drop-menu:hover .drop-content {
+	transform: rotateX(0deg) translateX(-50%);
+}
+
+.borders {
+	padding: 0 60px;
+}
+
+.border {
+	width: 35%;
+	height: 1px;
+	background-color: white;
+	/* margin: 0 60px; */
+}
+
+.hamburgue {
+	padding: 15px;
+	display: none;
+}
+
+.hamburgue span {
+	width: 35px;
+	height: 1.5px;
+	background-color: white;
+	position: relative;
+	display: inline-block;
+	transition: all 0.4s linear;
+}
+
+.hamburgue span::before,
+.hamburgue span::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1.5px;
+	background-color: white;
+	transition: all 0.4s linear;
+}
+
+.hamburgue span::before {
+	top: var(--top, -8px);
+}
+
+.hamburgue span::after {
+	top: var(--bottom, 8px);
+}
+
+/* End Main Header */
+
+/* Hero Section */
+.hero {
+	min-height: calc(100vh + (var(--headerHeight) - var(--topbarheight)));
+	margin-top: calc(var(--topbarheight) - var(--headerHeight));
+	/* topbarheight == green top bar */
+	/* .header will be transparent so i did this */
+	position: relative;
+}
+
+.hero img {
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	/* background-image: url('../images/bitmap@2x.jpg'); */
+	/* background-size: cover; */
+	z-index: -1;
+	position: absolute;
+	object-fit: cover;
+}
+
+.hero .content {
+	max-width: 796px;
+	color: white;
+	margin-left: 220px;
+}
+
+.hero .content span {
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+}
+
+.hero .content p {
+	font-family: mr_alex;
+	font-size: 90px;
+	margin: 20px 0 50px;
+	font-weight: bold;
+	line-height: 1;
+}
+
+.hero .content a {
+	padding: 14px 88px 12px;
+	border-radius: 22.5px;
+	border: solid 1.5px white;
+	color: white;
+	display: inline-block;
+}
+
+/* End Hero Section */
+/* page 2 start*/
+.page2 {
+	/* padding: 79px 0 125px; */
+	padding: 79px 0;
+	text-align: center;
+	overflow: hidden;
+}
+
+.page2 span {
+	/* font-family: Heebo-Regular_; */
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 1.08px;
+	color: #063514;
+}
+
+.page2 p {
+	font-size: 50px;
+	font-weight: bold;
+	text-align: center;
+	color: #063514;
+	padding: 0 0 17px;
+}
+
+.page2 .scroller {
+	display: flex;
+}
+
+/*  ===============================================*/
+.scroll {
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	/* -webkit-mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent) */
+	justify-content: space-evenly;
+	padding: 0 0 39px;
+}
+
+.scroll div {
+	white-space: nowrap;
+	animation: scroll var(--time, 20s) linear infinite;
+	/* animation-delay: calc(var(--time, 20s)1); */
+	display: flex;
+	justify-content: space-evenly;
+	gap: 99px;
+}
+
+.scroll div:nth-child(2) {
+	animation: scroll2 var(--time, 20s) linear infinite;
+	animation-delay: calc(var(--time, 20s)/ -2);
+}
+
+
+@keyframes scroll {
+	from {
+		transform: translateX(100%);
+	}
+
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes scroll2 {
+	from {
+		transform: translateX(0%);
+	}
+
+	to {
+		transform: translateX(-200%);
+	}
+}
+
+/* ================================================= */
+.page2 a {
+	margin: 29px 122px 0 125px;
+	padding: 14px 88px 12px;
+	border-radius: 22.5px;
+	background-color: #063514;
+	color: white;
+	font-weight: bold;
+	font-size: 13px;
+	display: inline-block;
+}
+
+/* page 2 end */
+
+/* page 3 start */
+.page3 {
+	position: relative;
+	height: 735px;
+	width: 100%;
+}
+
+.page3 .bgimg {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+
+.page3 .imgtop {
+	color: white;
+	text-align: center;
+	padding: 60px 20px;
+	background-color: rgba(18, 139, 87, 0.8);
+}
+
+.page3 .imgtop p:nth-child(1) {
+	font-size: 13px;
+	text-transform: uppercase;
+	padding-bottom: 11px;
+}
+
+.page3 .imgtop p:nth-child(2) {
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.page3 .imgtop p:nth-child(3) {
+	padding: 21px 0 51px;
+	/* font-family: Heebo; */
+	font-size: 18px;
+}
+
+.page3 .imgtop a {
+	/* background-color: 
+	#128b57; */
+	padding: 0 45px 12px;
+	/* font-family: Heebo-Regular_; */
+	font-size: 13px;
+	font-weight: bold;
+	color: white;
+	margin-bottom: 59px;
+	border-bottom: 1px solid white;
+}
+
+.page3 .imgtop .line {
+	background-color: #e4cb45;
+	height: 10px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+/* page 3 end */
+
+@media screen and (min-width:2100px) {
+
+	.topbar,
+	.header,
+	.hero {
+		padding: 0px calc((100% - 1440px) / 2);
+	}
+
+	.borders {
+		padding: 0 calc((100% - 1440px) / 2);
+	}
+
+	.page2 {
+		padding: 79px calc((100% - 1440px) / 2)
+	}
+
+	.page3 .imgtop {
+		/* specificity */
+		width: 890px !important;
+		height: 499px;
+	}
+
+}
+
+@media screen and (max-width:1050px) {
+	.hero .content {
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width:850px) {
+	.hamburgue {
+		display: block;
+	}
+
+	nav.header {
+		position: absolute;
+		right: 0;
+		height: 100vh;
+		top: var(--topbarheight, 35px);
+		backdrop-filter: blur(32px);
+		width: 100%;
+		padding: 35px 20px 45px;
+		display: none;
+	}
+
+	nav .links {
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+	.hero .content a {
+		width: max-content;
+		margin: 0 auto;
+	}
+
+	.topbar-2 {
+		display: none;
+	}
+
+	.hero .content {
+		display: grid;
+		justify-content: center;
+		text-align: center;
+		margin: 0;
+	}
+
+	.hero img {
+		height: 100%;
+	}
+
+	.hero .content p {
+		font-size: 75px;
+	}
+
+	header .borders {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.hero .content {
+		justify-content: center;
+	}
+
+	.page2 a {
+		margin: 0;
+	}
+
+}
+
+@media screen and (min-width:450px) {
+	.page3 .bgimg {
+		position: absolute;
+		z-index: -1;
+	}
+
+	.page3 .imgtop {
+		position: absolute;
+		top: -46px;
+		padding: 80px 69px;
+		transform: translateX(-50%);
+		margin: 0 auto;
+		width: 499px;
+		left: 50%;
+	}
+}
+
+@media screen and (max-width:450px) {
+	.topbar {
+		padding: 0 5%;
+	}
+
+	.hero .content p {
+		font-size: 60px;
+	}
+
+	.page3 {
+		display: grid;
+		gap: 0;
+	}
+}

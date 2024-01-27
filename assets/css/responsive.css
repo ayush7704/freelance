@@ -1,0 +1,22 @@
+@media screen and (max-width:850px) {
+    .hamburgue{
+        display: block;
+    }
+    nav.header{
+        display: grid;
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: var(--navheight);
+        width: 50%;
+        padding: 35px 20px 45px;
+        /* background: floralwhite; */
+        background: linear-gradient(132deg, #7780ad -13%, #000000, black);
+        /* display: none; */
+    }
+}
+@media screen and (max-width:450px) {
+    .topbar{
+        padding: 0 5%;
+    }
+}

@@ -1,0 +1,21 @@
+.df-ac{
+    display: flex;
+    align-items: center;
+}
+.f-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.d-xy-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d-center{
+    display: grid;
+    place-items: center;
+}
+.gap-1{
+    gap: 1rem;
+}
