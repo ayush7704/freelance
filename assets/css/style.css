@@ -9,6 +9,7 @@
 body {
 	margin: 0;
 	padding: 0;
+	color: white;
 }
 
 header {
@@ -158,6 +159,15 @@ nav .nav-link {
 
 /* End Main Header */
 
+/* main background img  */
+.background img {
+	position: absolute;
+	width: 100%;
+	height: 3434px;
+	object-fit: cover;
+	z-index: -1;
+}
+
 /* Hero Section */
 .hero {
 	min-height: calc(100vh + (var(--headerHeight) - var(--topbarheight)));
@@ -211,8 +221,8 @@ nav .nav-link {
 /* End Hero Section */
 /* page 2 start*/
 .page2 {
-	/* padding: 79px 0 125px; */
-	padding: 79px 0;
+	padding: 79px 0 125px;
+	/* padding: 79px 0; */
 	text-align: center;
 	overflow: hidden;
 }
@@ -296,11 +306,15 @@ nav .nav-link {
 
 /* page 2 end */
 
-/* page 3 start */
+/* === page 3 start ===*/
 .page3 {
 	position: relative;
-	height: 735px;
 	width: 100%;
+}
+
+.page3 .divimg {
+	display: flex;
+	/* d-flex solved the spacing issue */
 }
 
 .page3 .bgimg {
@@ -310,30 +324,48 @@ nav .nav-link {
 }
 
 .page3 .imgtop {
+	position: relative;
 	color: white;
 	text-align: center;
 	padding: 60px 20px;
 	background-color: rgba(18, 139, 87, 0.8);
 }
 
-.page3 .imgtop p:nth-child(1) {
+.page3 .imgtop p.one,
+.page4 .greendiv p.one {
 	font-size: 13px;
 	text-transform: uppercase;
 	padding-bottom: 11px;
 }
 
-.page3 .imgtop p:nth-child(2) {
+.page3 .imgtop p.two,
+.page4 .greendiv p.two {
 	font-size: 50px;
 	font-weight: bold;
 }
 
-.page3 .imgtop p:nth-child(3) {
+.page3 .imgtop p.three,
+.page4 .greendiv p.three {
 	padding: 21px 0 51px;
 	/* font-family: Heebo; */
 	font-size: 18px;
 }
 
-.page3 .imgtop a {
+
+.page3 .imgtop p.mobile-only {
+	font-family: Heebo-Regular_;
+	font-size: 40px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/*==== will be visible on mobile only====*/
+.mobile-only {
+	display: none;
+}
+
+.page3 .imgtop a,
+.page4 .greendiv a {
 	/* background-color: 
 	#128b57; */
 	padding: 0 45px 12px;
@@ -345,44 +377,308 @@ nav .nav-link {
 	border-bottom: 1px solid white;
 }
 
-.page3 .imgtop .line {
+.page3 .imgtop a {
+	/* padding-top: 52px; */
+	margin: 0;
+}
+
+.page3 .imgtop .line,
+.page4 .greendiv .line {
 	background-color: #e4cb45;
-	height: 10px;
 	width: 100%;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 }
 
+.page4 .greendiv .line2 {
+	position: absolute;
+	background-color: #e4cb45;
+	right: 0;
+	height: 100%;
+	top: 0;
+}
+
 /* page 3 end */
 
-@media screen and (min-width:2100px) {
-
-	.topbar,
-	.header,
-	.hero {
-		padding: 0px calc((100% - 1440px) / 2);
-	}
-
-	.borders {
-		padding: 0 calc((100% - 1440px) / 2);
-	}
-
-	.page2 {
-		padding: 79px calc((100% - 1440px) / 2)
-	}
-
-	.page3 .imgtop {
-		/* specificity */
-		width: 890px !important;
-		height: 499px;
-	}
-
+/* page 4 start  */
+.page4 {
+	padding: 80px 0 75px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
 }
+
+.page4 .divimg {
+	width: 800px;
+	flex: 0 1 800px;
+	display: flex;
+	/* d-flex solved the spacing issue */
+}
+
+.page4 .divimg img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.page4 .greendiv {
+	position: relative;
+	/* padding: 80px 0 0 ; */
+	padding: 80px 110px 0;
+	width: 720px;
+	background: #128b57;
+	height: 383px;
+	flex: 0 1 720px;
+	text-align: center;
+	color: white;
+}
+
+/* page 4 end  */
+/*=== page 5 start  ===*/
+.page5 {
+	padding: 0 43px 0 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* flex-wrap: wrap; */
+}
+
+.page5 .text-card {
+	background-color: white;
+	color: #063514;
+	padding: 67px 75px 44px 60px;
+	flex: 0 1 587px;
+	;
+}
+
+.page5 .text-card p.one {
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 1.08px;
+	text-transform: uppercase;
+}
+
+.page5 .text-card p.two {
+	font-size: 50px;
+	font-weight: bold;
+	padding: 8px 0 10px;
+	text-transform: uppercase;
+}
+
+.page5 .text-card p.three {
+	font-family: Heebo;
+	font-size: 18px;
+	line-height: 1.22;
+}
+
+/*===== page 5 end  =====*/
+
+/*====== page 6 cards start  ======*/
+.page6.cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	gap: 20px;
+	padding-bottom: 20px;
+}
+
+.page6.cards .card {
+	position: relative;
+	background-color: #00000080;
+	flex: 0 1 466px;
+	height: 400px;
+	color: white;
+	text-transform: Uppercase;
+	text-align: center;
+}
+
+.page6.cards .card img {
+	width: 100%;
+	object-fit: cover;
+	height: 100%;
+	z-index: -1;
+	position: absolute;
+}
+
+.page6.cards .card .heading {
+	margin: 0 0 22px;
+	font-family: Heebo-Regular_;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.page6.cards .card a {
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 1.08px;
+	padding: 0 13px 12px;
+	border-bottom: 1px solid white;
+	color: white;
+}
+
+/*====== page 6 cards end  ======*/
+
+/*======== footer start ======== */
+footer {
+	padding: 81px;
+	background-color: #063514;
+	/* width: 550px; */
+	display: grid;
+	justify-content: center;
+}
+
+footer .footer-wrapper {
+	max-width: 550px;
+}
+
+footer .links {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 28px;
+}
+
+footer .links .linksdiv {
+	flex: 0 1 150px;
+}
+footer .links .linksdiv > .line{
+	margin: 18px 0;
+	display: none;
+}
+
+footer .links .linksdiv .heading {
+	position: relative;
+	font-family: Heebo-Regular_;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 1.08px;
+	margin-bottom: 13px;
+}
+
+footer .links .linksdiv .heading .plus {
+	position: absolute;
+	right: 0%;
+	font-size: 1rem;
+	top: 50%;
+	display: none;
+	transform: translateY(-50%);
+	/* translateY(-50%) rotateZ(45deg) */
+}
+
+footer .links .linksdiv ul {
+	opacity: 0.5;
+	font-family: Inter;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.5;
+	list-style-type: none;
+}
+
+footer .links .linksdiv ul li {
+	padding: 5px 0;
+}
+
+footer .links .linksdiv ul li a {
+	color: inherit;
+}
+
+footer .form .mobile-only.heading {
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: Heebo-Regular_Bold;
+}
+
+footer .form .no-mobile.heading {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+footer .form .heading {
+	padding: 0 0 16px;
+}
+
+footer .form input[type='email'] {
+	font-family: Heebo;
+	font-size: 18px;
+	line-height: 1.22;
+	color: #063514;
+	padding: 12px 244px 11px 19px;
+	width: 379px;
+}
+
+footer .form input[type='email']::placeholder {
+	color: #063514;
+}
+
+footer .form input[type='submit'] {
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 1.08px;
+	width: 136px;
+	padding: 14px 40px 12px 41px;
+	border-radius: 22.5px;
+	color: white;
+	text-transform: uppercase;
+	border: none;
+	background-color:
+		#128b57;
+}
+
+footer form {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px 13px;
+	margin-bottom: 80px;
+}
+
+/* 
+footer form input:nth-child(1) {
+	flex: 0 1 379px;
+} */
+
+footer .f-footer .scroll {
+	padding: 56px 0 32px;
+}
+
+footer .footer-wrapper .line {
+	height: 1px;
+	width: 100%;
+	/* background-color: #063514; */
+	background-color: white;
+}
+footer .f-footer .copyright{
+	opacity: 0.5;
+	font-family: Inter;
+	font-size: 10px;
+	text-align: center;
+}
+
+/*======== footer end ======== */
+
+
+
+/*====== responsive  =====*/
+/* order of max-width will be like  4 > 3 > 2 > 1 */
+/* all max-width queries */
+/* all min-width queries */
+/* order of min-width will be like  1 > 2 > 3 > 4 */
 
 @media screen and (max-width:1050px) {
 	.hero .content {
 		margin: 0 auto;
+	}
+
+	.page5 .text-card:nth-child(1) {
+		display: none;
+	}
+
+	.page5 {
+		justify-content: center;
 	}
 }
 
@@ -436,6 +732,7 @@ nav .nav-link {
 	}
 }
 
+
 @media screen and (max-width: 650px) {
 	.hero .content {
 		justify-content: center;
@@ -445,9 +742,161 @@ nav .nav-link {
 		margin: 0;
 	}
 
+	.page4 .greendiv {
+		padding: 60px 20px;
+		order: 1;
+		min-height: 418px;
+	}
+
+	.page5 {
+		padding: 10px;
+	}
+
+	.page5 .text-card {
+		padding: 70px 20px 62px;
+	}
+
+	.page5 .text-card p.two {
+		padding: 25px 0 13px;
+		text-align: center;
+		font-size: 40px;
+	}
+
+	footer {
+		padding: 41px 30px;
+	}
+
+	footer .form.heading {
+		padding: 0 0 19px;
+	}
+
+	footer .form input[type='email'] {
+		padding: 12px 125px 11px 19px;
+		width: 260px;
+	}
+
+	form input:nth-child(1) {
+		flex: 1 1 379px;
+	}
+
+	form input:nth-child(2) {
+		flex: 1 1 136px;
+	}
+
+	footer .links .linksdiv {
+		flex: 1 1 300px;
+	}
+	footer .links .linksdiv .heading .plus {
+		display: block;
+	}
+	footer .links .linksdiv ul {
+		height: 0;
+		overflow: hidden;
+	}
+	footer .links .linksdiv>.line{
+		display: block;
+	}
 }
 
+@media screen and (max-width:450px) {
+	.mobile-only {
+		display: block;
+	}
+
+	.no-mobile {
+		display: none;
+	}
+
+	.topbar {
+		padding: 0 5%;
+	}
+
+	.hero .content p {
+		font-size: 60px;
+	}
+
+	.page2 {
+		padding: 59px 0 79px;
+	}
+
+	.page2 p {
+		color: #128b57;
+		font-size: 40px;
+		padding: 15px 20px 18px;
+	}
+
+	.page3 {
+		display: flex;
+		flex-direction: column;
+		/* height: var(--page3height); */
+		/* normally giving height will fill the gap of this children */
+		/* strange but working */
+	}
+
+	.page3 .imgtop {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 373px;
+	}
+
+	.page3 .imgtop p.two,
+	.page4 .greendiv p.two {
+		font-size: 40px;
+		padding: 13px 0;
+	}
+
+	.page4 .greendiv p.two {
+		padding: 0 0 13px;
+	}
+
+	.page3 .imgtop p.two {
+		padding: 2px 0 13px;
+	}
+
+	.page4 .greendiv p.three {
+		padding: 0 0 41px;
+	}
+
+	.page3 .imgtop p.three {
+		padding: 0 0 52px;
+	}
+
+	.page4 .greendiv .line {
+		height: 10px;
+	}
+
+	.page6.cards .card {
+		height: 283px;
+		flex: 0 1 320px;
+	}
+
+	.page6.cards .card .heading {
+		font-size: 35px;
+		margin: 0 0 23px;
+	}
+
+	.page6.cards .card a {
+		padding: 0 12px 14px 11px;
+	}
+
+	footer form {
+		margin-bottom: 45px;
+	}
+
+	footer .f-footer .scroll {
+		padding: 50px 0 32px;
+	}
+}
+
+/* min  ===========*/
+
+/* order will be like  1 > 2 > 3 > 4 */
 @media screen and (min-width:450px) {
+	.page3 {
+		height: 735px;
+	}
+
 	.page3 .bgimg {
 		position: absolute;
 		z-index: -1;
@@ -459,22 +908,100 @@ nav .nav-link {
 		padding: 80px 69px;
 		transform: translateX(-50%);
 		margin: 0 auto;
-		width: 499px;
 		left: 50%;
+	}
+
+	.page2 .greendiv {
+		padding: 80px 69px;
+	}
+
+	.page3 .imgtop .line {
+		height: 10px;
+	}
+
+	.page4 .greendiv .line2 {
+		width: 10px;
 	}
 }
 
-@media screen and (max-width:450px) {
-	.topbar {
-		padding: 0 5%;
+@media screen and (min-width:650px) {
+
+	.page3 .imgtop {
+		width: 499px;
 	}
 
-	.hero .content p {
-		font-size: 60px;
+	.page4 .greendiv .line2 {
+		width: 10px;
 	}
 
-	.page3 {
-		display: grid;
-		gap: 0;
+	footer form input:nth-child(1) {
+		flex: 0 1 379px;
+	}
+}
+
+@media screen and (min-width:850px) {
+	.page4 .divimg {
+		height: 487px;
+	}
+}
+
+@media screen and (min-width:1050px) {
+	.page3 .imgtop {
+		width: 890px;
+		height: 499px;
+	}
+
+	.page5 {
+		gap: 173px;
+	}
+}
+
+@media screen and (min-width:1440px) {
+
+	.page4 .divimg {
+		/* position: absolute; */
+		position: relative;
+		right: 36px;
+		/* top: 80px; */
+	}
+
+	.page4 .greendiv {
+		/* position: absolute; */
+		position: relative;
+		/* top: 120px; */
+		z-index: 1;
+		/* left: 0; */
+	}
+}
+
+
+@media screen and (min-width:2100px) {
+
+	.topbar,
+	.header,
+	.hero {
+		padding: 0px calc((100% - 1440px) / 2);
+	}
+
+	.borders {
+		padding: 0 calc((100% - 1440px) / 2);
+	}
+
+	.page2 {
+		padding: 79px calc((100% - 1440px) / 2)
+	}
+
+	.page3 .imgtop {
+		/* specificity */
+		width: 890px !important;
+		height: 499px;
+	}
+
+	.page4 .greendiv {
+		flex: 1 1 1201px;
+	}
+
+	.page6.cards .card {
+		flex: 0 1 687px;
 	}
 }
