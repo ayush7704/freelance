@@ -151,10 +151,12 @@ nav .nav-link {
 
 .hamburgue span::before {
 	top: var(--top, -8px);
+	transform: rotate(var(--rotatebfr, 0deg));
 }
 
 .hamburgue span::after {
 	top: var(--bottom, 8px);
+	transform: rotate(var(--rotateaft, 0deg));
 }
 
 /* End Main Header */
@@ -163,7 +165,7 @@ nav .nav-link {
 .background img {
 	position: absolute;
 	width: 100%;
-	height: 3434px;
+	height: var(--bgimg,3400px);
 	object-fit: cover;
 	z-index: -1;
 }
@@ -526,12 +528,14 @@ footer {
 	padding: 81px;
 	background-color: #063514;
 	/* width: 550px; */
-	display: grid;
-	justify-content: center;
+	/* display: grid; */
+	/* justify-content: center; */
 }
 
 footer .footer-wrapper {
 	max-width: 550px;
+	margin: 0 auto;
+	display: grid;
 }
 
 footer .links {
@@ -543,6 +547,10 @@ footer .links {
 
 footer .links .linksdiv {
 	flex: 0 1 150px;
+}
+
+footer .linksdiv.expanded ul {
+    height: auto !important;
 }
 footer .links .linksdiv > .line{
 	margin: 18px 0;
@@ -569,6 +577,7 @@ footer .links .linksdiv .heading .plus {
 }
 
 footer .links .linksdiv ul {
+	transition: all 0.4s linear;
 	opacity: 0.5;
 	font-family: Inter;
 	font-size: 12px;
@@ -694,12 +703,14 @@ footer .f-footer .copyright{
 		top: var(--topbarheight, 35px);
 		backdrop-filter: blur(32px);
 		width: 100%;
-		padding: 35px 20px 45px;
+		background-color: #000000bd;
+		padding: 60px 20px 45px;
 		display: none;
 	}
 
 	nav .links {
 		flex-direction: column;
+		gap: 4.5rem;
 		justify-content: space-evenly;
 	}
 
@@ -763,7 +774,7 @@ footer .f-footer .copyright{
 	}
 
 	footer {
-		padding: 41px 30px;
+		padding: 41px 30px 37px;
 	}
 
 	footer .form.heading {
@@ -782,7 +793,12 @@ footer .f-footer .copyright{
 	form input:nth-child(2) {
 		flex: 1 1 136px;
 	}
-
+	footer .links{
+		order: 1;
+	}
+	footer .footer-wrapper > .line {
+		display: none;
+	}
 	footer .links .linksdiv {
 		flex: 1 1 300px;
 	}
@@ -792,9 +808,13 @@ footer .f-footer .copyright{
 	footer .links .linksdiv ul {
 		height: 0;
 		overflow: hidden;
+		margin-top: 13px;
 	}
 	footer .links .linksdiv>.line{
 		display: block;
+	}
+	footer .links .linksdiv .heading{
+		margin: 0;
 	}
 }
 
@@ -885,7 +905,8 @@ footer .f-footer .copyright{
 	}
 
 	footer .f-footer .scroll {
-		padding: 50px 0 32px;
+		/* padding: 50px 0 32px; */
+		padding: 22px 0 32px;
 	}
 }
 
