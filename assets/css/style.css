@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url(https://db.onlinewebfonts.com/c/807d127782fb61e67d044d13ad7adce9?family=MrAlex-Bold);
 
 * {
 	margin: 0;
@@ -10,6 +11,7 @@ body {
 	margin: 0;
 	padding: 0;
 	color: white;
+	font-family: 'Heebo', sans-serif;
 }
 
 header {
@@ -39,8 +41,6 @@ a {
 	display: flex;
 	justify-content: space-between;
 	text-transform: uppercase;
-	/* font-family: 'Heebo', sans-serif; */
-	font-family: Inter;
 }
 
 .topbar a {
@@ -64,6 +64,7 @@ a {
 /*Main Header*/
 nav {
 	padding: 16px;
+	font-family: 'Heebo', sans-serif;
 }
 
 nav .links {
@@ -78,6 +79,7 @@ nav .nav-link {
 	color: #fff;
 	font-weight: bold;
 	letter-spacing: 1.08px;
+	font-family: 'Heebo', sans-serif;
 }
 
 .drop-menu {
@@ -165,7 +167,7 @@ nav .nav-link {
 .background img {
 	position: absolute;
 	width: 100%;
-	height: var(--bgimg,3400px);
+	height: var(--bgimg, 3400px);
 	object-fit: cover;
 	z-index: -1;
 }
@@ -202,10 +204,11 @@ nav .nav-link {
 	font-size: 16px;
 	font-weight: bold;
 	letter-spacing: 1.5px;
+	font-family: 'Inter', sans-serif;
 }
 
 .hero .content p {
-	font-family: mr_alex;
+	font-family: "MrAlex-Bold";
 	font-size: 90px;
 	margin: 20px 0 50px;
 	font-weight: bold;
@@ -218,6 +221,7 @@ nav .nav-link {
 	border: solid 1.5px white;
 	color: white;
 	display: inline-block;
+	font-family: 'Heebo', sans-serif;
 }
 
 /* End Hero Section */
@@ -235,6 +239,8 @@ nav .nav-link {
 	font-weight: bold;
 	letter-spacing: 1.08px;
 	color: #063514;
+	font-family: 'Heebo', sans-serif;
+	text-transform: uppercase;
 }
 
 .page2 p {
@@ -243,10 +249,24 @@ nav .nav-link {
 	text-align: center;
 	color: #063514;
 	padding: 0 0 17px;
+	font-family: 'Heebo', sans-serif;
+	text-transform: uppercase;
 }
 
-.page2 .scroller {
-	display: flex;
+.page2>.splide {
+	margin-bottom: 15px;
+}
+
+.splide__pagination {
+	display: none !important;
+}
+
+.splide__list {
+	gap: 99px;
+}
+
+.splide__slide {
+	width: auto;
 }
 
 /*  ===============================================*/
@@ -304,6 +324,7 @@ nav .nav-link {
 	font-weight: bold;
 	font-size: 13px;
 	display: inline-block;
+	font-family: 'Heebo', sans-serif;
 }
 
 /* page 2 end */
@@ -432,7 +453,8 @@ nav .nav-link {
 	padding: 80px 110px 0;
 	width: 720px;
 	background: #128b57;
-	height: 383px;
+	/* height: 383px; */
+	min-height: 383px;
 	flex: 0 1 720px;
 	text-align: center;
 	color: white;
@@ -525,17 +547,16 @@ nav .nav-link {
 
 /*======== footer start ======== */
 footer {
-	padding: 81px;
+	/* padding: 81px; */
+	padding: 81px 0 70px;
 	background-color: #063514;
-	/* width: 550px; */
-	/* display: grid; */
-	/* justify-content: center; */
 }
 
 footer .footer-wrapper {
 	max-width: 550px;
 	margin: 0 auto;
 	display: grid;
+	padding: 41px 30px 0;
 }
 
 footer .links {
@@ -550,9 +571,10 @@ footer .links .linksdiv {
 }
 
 footer .linksdiv.expanded ul {
-    height: auto !important;
+	height: auto !important;
 }
-footer .links .linksdiv > .line{
+
+footer .links .linksdiv>.line {
 	margin: 18px 0;
 	display: none;
 }
@@ -565,6 +587,9 @@ footer .links .linksdiv .heading {
 	letter-spacing: 1.08px;
 	margin-bottom: 13px;
 }
+.linksdiv:not(:first-child) .line{
+	margin: 0 0 18px !important;
+}
 
 footer .links .linksdiv .heading .plus {
 	position: absolute;
@@ -574,6 +599,12 @@ footer .links .linksdiv .heading .plus {
 	display: none;
 	transform: translateY(-50%);
 	/* translateY(-50%) rotateZ(45deg) */
+	transition: all 0.3s linear;
+}
+footer .links .linksdiv .heading .x.plus{
+	transform:translateY(-50%) rotate(45deg);
+	font-size: 1.2rem;
+    font-weight: bold;
 }
 
 footer .links .linksdiv ul {
@@ -617,6 +648,7 @@ footer .form input[type='email'] {
 	color: #063514;
 	padding: 12px 244px 11px 19px;
 	width: 379px;
+	background-color: white;
 }
 
 footer .form input[type='email']::placeholder {
@@ -660,7 +692,12 @@ footer .footer-wrapper .line {
 	/* background-color: #063514; */
 	background-color: white;
 }
-footer .f-footer .copyright{
+
+footer .f-footer>.splide {
+	padding: 56px 0 32px;
+}
+
+footer .f-footer .copyright {
 	opacity: 0.5;
 	font-family: Inter;
 	font-size: 10px;
@@ -688,6 +725,14 @@ footer .f-footer .copyright{
 
 	.page5 {
 		justify-content: center;
+	}
+
+	.page4 .divimg {
+		flex: 1 1 800px;
+	}
+
+	.page4 .greendiv {
+		flex: 1 1 720px;
 	}
 }
 
@@ -748,6 +793,21 @@ footer .f-footer .copyright{
 	.hero .content {
 		justify-content: center;
 	}
+	.hero .content span{
+		font-size: 12px;
+		padding: 0 20px;
+	}
+	.hero .content p{
+		margin-left: 37px;
+		margin-right: 37px;
+	}
+	.hero .content a{
+		margin: 0 37px;
+	}
+	.hero .content a{
+		width: auto;
+
+	}
 
 	.page2 a {
 		margin: 0;
@@ -774,7 +834,7 @@ footer .f-footer .copyright{
 	}
 
 	footer {
-		padding: 41px 30px 37px;
+		padding: 0 0 37px;
 	}
 
 	footer .form.heading {
@@ -793,27 +853,34 @@ footer .f-footer .copyright{
 	form input:nth-child(2) {
 		flex: 1 1 136px;
 	}
-	footer .links{
+
+	footer .links {
 		order: 1;
 	}
-	footer .footer-wrapper > .line {
+
+	footer .footer-wrapper>.line {
 		display: none;
 	}
+
 	footer .links .linksdiv {
 		flex: 1 1 300px;
 	}
+
 	footer .links .linksdiv .heading .plus {
 		display: block;
 	}
+
 	footer .links .linksdiv ul {
 		height: 0;
 		overflow: hidden;
 		margin-top: 13px;
 	}
-	footer .links .linksdiv>.line{
+
+	footer .links .linksdiv>.line {
 		display: block;
 	}
-	footer .links .linksdiv .heading{
+
+	footer .links .linksdiv .heading {
 		margin: 0;
 	}
 }
@@ -906,7 +973,11 @@ footer .f-footer .copyright{
 
 	footer .f-footer .scroll {
 		/* padding: 50px 0 32px; */
-		padding: 22px 0 32px;
+		padding: calc(50px - 18px) 0 33px;
+	}
+
+	footer .f-footer>.splide {
+		padding: calc(50px - 18px) 0 33px;
 	}
 }
 
@@ -943,6 +1014,10 @@ footer .f-footer .copyright{
 	.page4 .greendiv .line2 {
 		width: 10px;
 	}
+
+	.page4 .greendiv a {
+		display: inline-block;
+	}
 }
 
 @media screen and (min-width:650px) {
@@ -957,6 +1032,9 @@ footer .f-footer .copyright{
 
 	footer form input:nth-child(1) {
 		flex: 0 1 379px;
+	}
+	footer form{
+		flex-wrap: nowrap;
 	}
 }
 
@@ -974,6 +1052,11 @@ footer .f-footer .copyright{
 
 	.page5 {
 		gap: 173px;
+	}
+
+	.page4 {
+		justify-content: flex-start;
+		flex-wrap: nowrap;
 	}
 }
 

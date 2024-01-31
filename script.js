@@ -28,7 +28,11 @@ document.querySelectorAll('.links-open').forEach((elm)=>{
         })
         // Toggle the 'expanded' class on the parent element
         parentElement.classList.toggle('expanded');
-        console.log( e.target.closest('.linksdiv'))
+        console.log(e.target.nextElementSibling)
+        document.querySelectorAll('.x.plus').forEach((x)=>{
+            x.classList.remove('x')
+        })
+        e.target.nextElementSibling.classList.toggle('x')
         // e.target.parentEleme 
     })
 })
